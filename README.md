@@ -1,6 +1,6 @@
-# Lookstead AI Editor — marketing site
+# Lookstead — marketing site
 
-Static marketing site for **Lookstead AI Editor** (separate from the [Lookstead home assistant](https://github.com/kimthomx-hue/lookstead) site and the [Expo app](../lookstead-ai-editor) repo).
+Static marketing site for **Lookstead** (separate from the [Lookstead home assistant](https://github.com/kimthomx-hue/lookstead) site and the [Expo app](../lookstead-ai-editor) repo).
 
 ## Local preview
 

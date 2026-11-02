@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Lookstead AI Editor — turn long videos into scroll-stopping shorts. Trim, format for TikTok and Reels, add photo overlays, and export from your iPhone." />
+      content="Lookstead — turn long videos into scroll-stopping shorts. Trim, format for TikTok and Reels, add photo overlays, and export from your iPhone." />
     <meta
       name="keywords"
-      content="Lookstead AI Editor, mobile video editor, short form video, TikTok editor, Reels, captions, trim video iPhone" />
+      content="Lookstead, mobile video editor, short form video, TikTok editor, Reels, captions, trim video iPhone" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="Lookstead AI Editor" />
+    <meta name="author" content="Lookstead" />
     <meta name="theme-color" content="#0a0a0f" />
-    <title>Lookstead AI Editor | Turn long videos into scroll-stopping shorts</title>
+    <title>Lookstead | Turn long videos into scroll-stopping shorts</title>
     <link rel="canonical" href="https://lookstead.com/" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Lookstead AI Editor" />
+    <meta property="og:site_name" content="Lookstead" />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="Lookstead AI Editor | Turn long videos into scroll-stopping shorts" />
+    <meta property="og:url" content="https://lookstead.com/" />
+    <meta property="og:title" content="Lookstead | Turn long videos into scroll-stopping shorts" />
     <meta
       property="og:description"
       content="Find the best moments, create beautiful captions and transform your videos into content ready for TikTok, Reels and YouTube Shorts." />
-    <meta property="og:image" content="/assets/icon-256.png" />
+    <meta property="og:image" content="https://lookstead.com/assets/icon-256.png" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/assets/icon-48.png" type="image/png" sizes="48x48" />
     <link rel="apple-touch-icon" href="/assets/icon-192.png" />
@@ -34,30 +35,8 @@
     <link rel="stylesheet" href="/styles.css" />
     <script src="/assets/auth-redirect.js"></script>
   </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav-inner" aria-label="Main">
-        <a class="brand" href="/">
-          <img
-            class="brand-mark"
-            src="/assets/white-icon-transparent.svg"
-            width="28"
-            height="28"
-            alt="Lookstead AI Editor" />
-          Lookstead AI Editor
-        </a>
-        <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#how">How it works</a>
-          <a href="#pricing">Pricing</a>
-          <a href="/help/">Help</a>
-        </div>
-        <a class="nav-cta app-store-link" href="#download">
-          <span class="apple" aria-hidden="true"></span>
-          Download for iPhone
-        </a>
-      </nav>
-    </header>
+  <body data-nav-active="home">
+    <header class="site-header" id="site-header"></header>
 
     <main>
       <section class="hero" aria-label="Introduction">
@@ -73,11 +52,11 @@
             <p class="hero-headline">Edit on your iPhone.</p>
             <p class="hero-lead">
               Import from Photos or Files, trim with a visual timeline, pick vertical or square formats,
-              and add cropped photo overlays with the same precise crop tool you know from Lookstead.
+              and add cropped photo overlays with a precise crop editor.
             </p>
           </article>
           <article class="hero-slide" data-slide="2">
-            <p class="hero-headline">AI-assisted workflows — coming soon.</p>
+            <p class="hero-headline">Smarter workflows — coming soon.</p>
             <p class="hero-lead">
               Automatic clip suggestions, animated captions, and compliant YouTube import are on the
               roadmap. Today’s app focuses on a fast, reliable mobile editor.
@@ -86,8 +65,8 @@
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary app-store-link" href="#download">Get the app</a>
-          <a class="btn btn-ghost" href="#how">How it works</a>
+          <a class="btn btn-primary app-store-link" href="/download/">Get the app</a>
+          <a class="btn btn-ghost" href="/how/">How it works</a>
         </div>
 
         <div class="hero-dots" role="tablist" aria-label="Hero slides">
@@ -97,123 +76,27 @@
         </div>
       </section>
 
-      <section id="about" class="section section-muted" aria-labelledby="about-heading">
+      <section class="section section-muted" aria-labelledby="about-heading">
         <div class="section-inner narrow">
           <h2 id="about-heading" class="section-label">A creator-first mobile editor</h2>
           <p class="pricing-lead">
-            <strong>Lookstead AI Editor</strong> is built for short-form creators who want professional
-            results without a desktop timeline. Trim clips, preview aspect ratios, layer cropped photos
-            on your footage, and export to your camera roll — with AI clip selection and auto-captions
+            <strong>Lookstead</strong> is built for short-form creators who want professional results
+            without a desktop timeline. Trim clips, preview aspect ratios, layer cropped photos on your
+            footage, and export to your camera roll — with smarter clip selection and auto-captions
             arriving in future updates.
           </p>
           <p class="pricing-lead">
-            Read the <a href="/help/">help centre</a>, <a href="/privacy/">privacy policy</a>, or
+            Explore <a href="/features/">features</a>, <a href="/pricing/">pricing</a>, or read the
+            <a href="/help/">help centre</a>, <a href="/privacy/">privacy policy</a>, and
             <a href="/terms/">terms of service</a>.
-          </p>
-        </div>
-      </section>
-
-      <section id="features" class="section section-dark">
-        <div class="section-inner">
-          <h2 class="section-label">Features</h2>
-          <ul class="feature-grid">
-            <li>
-              <h3>Trim &amp; cut</h3>
-              <p>Set in and out points on a thumbnail timeline, then export the selected clip.</p>
-            </li>
-            <li>
-              <h3>Vertical formatting</h3>
-              <p>Preview 9:16, 1:1, 4:5 and 16:9 frames before you export.</p>
-            </li>
-            <li>
-              <h3>Photo overlays</h3>
-              <p>Crop images with pinch, drag handles and rotation — then place them on your video.</p>
-            </li>
-            <li>
-              <h3>AI clip selection</h3>
-              <p><em>Coming soon.</em> Long-form uploads analysed for hooks and highlight moments.</p>
-            </li>
-            <li>
-              <h3>Auto captions</h3>
-              <p><em>Coming soon.</em> Word-level captions with creator-friendly styles.</p>
-            </li>
-            <li>
-              <h3>YouTube import</h3>
-              <p><em>Coming soon.</em> The app validates links today; download is not enabled yet.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="how" class="section">
-        <div class="section-inner narrow">
-          <h2 class="section-label">How it works</h2>
-          <ol class="steps">
-            <li><strong>Upload a video</strong> from Photos or Files on your iPhone.</li>
-            <li><strong>Trim the best section</strong> with set start / set end controls.</li>
-            <li><strong>Add photo overlays</strong> using the Lookstead-style crop editor.</li>
-            <li><strong>Pick a format</strong> for TikTok, Reels or Shorts.</li>
-            <li><strong>Export</strong> to your photo library (development or store build).</li>
-          </ol>
-        </div>
-      </section>
-
-      <section id="pricing" class="section section-muted">
-        <div class="section-inner narrow">
-          <h2 class="section-label">Pricing</h2>
-          <p class="pricing-lead">
-            Pricing will be announced before paid plans go live. The editor is free to try during early
-            access; optional Pro tiers may add AI clipping, higher export quality and cloud projects.
-          </p>
-          <div class="pricing-cards">
-            <div class="pricing-card">
-              <h3>Free</h3>
-              <p>Core trimming, formats and overlays on device. No payment required today.</p>
-            </div>
-            <div class="pricing-card highlight">
-              <h3>Pro</h3>
-              <p><em>Planned.</em> AI moments, captions and priority export options.</p>
-            </div>
-            <div class="pricing-card">
-              <h3>Studio</h3>
-              <p><em>Planned.</em> Teams and higher volume — details later.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="download" class="section section-cta">
-        <div class="section-inner narrow center">
-          <h2 class="section-label">Get Lookstead AI Editor</h2>
-          <p>Install on iPhone via TestFlight or the App Store when available. Email us for early access.</p>
-          <div class="download-actions">
-            <a class="btn btn-primary btn-lg app-store-link" href="#download">Get on the App Store</a>
-            <a class="btn btn-ghost-on-dark btn-lg email-contact-link" href="mailto:hello@lookstead.com">
-              Email hello@lookstead.com
-            </a>
-          </div>
-          <p class="toast" id="site-toast" role="status" aria-live="polite" hidden></p>
-          <p class="fine">
-            Video export requires a native build — not Expo Go. AI features labelled “coming soon” are not
-            yet available in the app.
           </p>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span class="brand-footer">Lookstead AI Editor</span>
-        <div class="footer-links">
-          <a href="/help/">Help</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/terms/">Terms</a>
-          <a class="email-contact-link" href="mailto:hello@lookstead.com">hello@lookstead.com</a>
-        </div>
-        <p class="copyright">© Lookstead AI Editor</p>
-      </div>
-    </footer>
+    <footer class="site-footer" id="site-footer"></footer>
 
+    <script src="/assets/site-chrome.js"></script>
     <script src="/main.js" defer></script>
   </body>
 </html>

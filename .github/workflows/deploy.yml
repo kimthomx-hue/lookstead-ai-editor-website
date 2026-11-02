@@ -1,4 +1,4 @@
-name: Deploy Lookstead AI Editor website
+name: Deploy Lookstead website
 
 on:
   push:

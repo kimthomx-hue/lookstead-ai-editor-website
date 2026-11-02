@@ -2,8 +2,8 @@ const HELP_FEATURED_COUNT = 6;
 
 const HELP_FAQS = [
   {
-    q: 'What can I do in Lookstead AI Editor today?',
-    a: 'Import a video from Photos or Files, trim the clip, choose a vertical or square format, add cropped photo overlays, and export to your camera roll. AI clip suggestions and YouTube import are planned — not live yet.',
+    q: 'What can I do in Lookstead today?',
+    a: 'Import a video from Photos or Files, trim the clip, choose a vertical or square format, add cropped photo overlays, and export to your camera roll. Clip suggestions and YouTube import are planned — not live yet.',
   },
   {
     q: 'Why does export say I need a development build?',

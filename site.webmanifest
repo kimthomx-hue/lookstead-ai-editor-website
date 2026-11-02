@@ -1,6 +1,6 @@
 {
-  "name": "Lookstead AI Editor",
-  "short_name": "AI Editor",
+  "name": "Lookstead",
+  "short_name": "Lookstead",
   "description": "Turn long videos into scroll-stopping shorts.",
   "start_url": "/",
   "display": "standalone",

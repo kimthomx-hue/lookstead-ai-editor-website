@@ -1,5 +1,5 @@
 /**
- * Forwards Supabase email auth into the Lookstead AI Editor app.
+ * Forwards Supabase email auth into the Lookstead app.
  * Uses query params (not #hash) — iOS often drops hash fragments on custom URL schemes.
  */
 (function () {

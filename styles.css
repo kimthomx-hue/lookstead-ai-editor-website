@@ -314,6 +314,7 @@ a {
   border-radius: var(--radius-card);
 }
 
+.feature-grid h2,
 .feature-grid h3 {
   margin: 0 0 0.45rem;
   font-size: 1rem;
@@ -515,7 +516,7 @@ a {
 }
 
 .page-help {
-  padding: 1.5rem 1.5rem 3rem;
+  padding: 5.5rem 1.5rem 3rem;
   max-width: 640px;
   margin: 0 auto;
 }
@@ -696,6 +697,24 @@ a {
   .nav-cta {
     margin-left: 0;
   }
+}
+
+.nav-links a.nav-link-active {
+  color: var(--text);
+}
+
+.page-sub {
+  padding: 6.5rem 1.5rem 3rem;
+  min-height: 70vh;
+}
+
+.page-sub .section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-sub .section-inner.narrow {
+  max-width: 600px;
 }
 
 @media (max-width: 767px) {
