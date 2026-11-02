@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Opening Lookstead…</title>
+    <title>Opening Lookstead AI Editor…</title>
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/assets/icon-48.png" type="image/png" sizes="48x48" />
     <link rel="stylesheet" href="/styles.css" />
@@ -13,10 +13,10 @@
   <body>
     <main class="section section-muted" style="min-height: 70vh; display: flex; align-items: center">
       <div class="section-inner narrow center">
-        <h1>Opening Lookstead</h1>
+        <h1>Opening Lookstead AI Editor</h1>
         <p id="status">Finishing sign-in in the app…</p>
         <p>
-          <a id="open-app" class="btn btn-primary" href="lookstead://callback">Open Lookstead</a>
+          <a id="open-app" class="btn btn-primary" href="lookstead-editor://callback">Open app</a>
         </p>
         <p class="text-muted" style="margin-top: 1.5rem; font-size: 0.95rem">
           Open this link on the same phone and the same app you used to request the email (Expo Go,
@@ -32,7 +32,7 @@
         var link = document.getElementById('open-app');
         var status = document.getElementById('status');
         if (hash && link) {
-          link.href = 'lookstead://callback' + hash;
+          link.href = 'lookstead-editor://callback' + hash;
         }
         if (hash.indexOf('error=') !== -1) {
           status.textContent =
