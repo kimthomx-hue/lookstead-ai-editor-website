@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Canonical host: https://lookstead.com (see CNAME + GitHub Pages custom domain)
+
+Sitemap: https://lookstead.com/sitemap.xml

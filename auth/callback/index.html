@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Opening Lookstead…</title>
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/assets/icon-48.png" type="image/png" sizes="48x48" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/assets/auth-redirect.js"></script>
+  </head>
+  <body>
+    <main class="section section-muted" style="min-height: 70vh; display: flex; align-items: center">
+      <div class="section-inner narrow center">
+        <h1>Opening Lookstead</h1>
+        <p id="status">Finishing sign-in in the app…</p>
+        <p>
+          <a id="open-app" class="btn btn-primary" href="lookstead://callback">Open Lookstead</a>
+        </p>
+        <p class="text-muted" style="margin-top: 1.5rem; font-size: 0.95rem">
+          Open this link on the same phone and the same app you used to request the email (Expo Go,
+          TestFlight, or App Store). If you were testing in Expo Go, do not use this page—request the
+          email again from Expo Go so the link targets Expo directly.
+        </p>
+        <p><a href="/help/">Help</a></p>
+      </div>
+    </main>
+    <script>
+      (function () {
+        var hash = window.location.hash || '';
+        var link = document.getElementById('open-app');
+        var status = document.getElementById('status');
+        if (hash && link) {
+          link.href = 'lookstead://callback' + hash;
+        }
+        if (hash.indexOf('error=') !== -1) {
+          status.textContent =
+            'Sign-in could not be completed. Request a new email link in the app and try again.';
+        }
+      })();
+    </script>
+  </body>
+</html>
