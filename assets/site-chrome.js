@@ -12,18 +12,18 @@
     '<img class="brand-mark" src="/assets/white-icon-transparent.svg" width="28" height="28" alt="Lookstead" />' +
     'Lookstead</a>' +
     '<div class="nav-links">' +
-    '<a class="nav-features' +
+    '<a class="nav-features nav-scroll' +
     navClass('features') +
-    '" href="/features/">Features</a>' +
-    '<a class="nav-how' +
+    '" href="/#features" data-section="features">Features</a>' +
+    '<a class="nav-how nav-scroll' +
     navClass('how') +
-    '" href="/how/">How it works</a>' +
-    '<a class="nav-pricing' +
+    '" href="/#how" data-section="how">How it works</a>' +
+    '<a class="nav-pricing nav-scroll' +
     navClass('pricing') +
-    '" href="/pricing/">Pricing</a>' +
-    '<a class="nav-help' +
+    '" href="/#pricing" data-section="pricing">Pricing</a>' +
+    '<a class="nav-help nav-scroll' +
     navClass('help') +
-    '" href="/help/">Help</a>' +
+    '" href="/#help" data-section="help">Help</a>' +
     '</div>' +
     '<a class="nav-cta app-store-link" href="/download/">' +
     '<span class="apple" aria-hidden="true"></span>' +
@@ -34,7 +34,7 @@
     '<div class="footer-inner">' +
     '<span class="brand-footer">Lookstead</span>' +
     '<div class="footer-links">' +
-    '<a href="/help/">Help</a>' +
+    '<a href="/#help">Help</a>' +
     '<a href="/privacy/">Privacy</a>' +
     '<a href="/terms/">Terms</a>' +
     '<a class="email-contact-link" href="mailto:hello@lookstead.com">hello@lookstead.com</a>' +

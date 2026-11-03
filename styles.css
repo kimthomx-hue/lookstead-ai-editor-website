@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.75rem;
 }
 
 body {
@@ -354,6 +355,60 @@ a {
 .steps strong {
   font-weight: 600;
   color: #20231f;
+}
+
+.steps-on-dark {
+  color: var(--text-muted);
+}
+
+.steps-on-dark strong {
+  color: var(--text);
+}
+
+.section-dark .section-label {
+  color: var(--text);
+}
+
+.section-label-dark {
+  color: #20231f;
+}
+
+.home-section {
+  scroll-margin-top: 5.75rem;
+}
+
+.section-cta-row {
+  margin: 1.75rem 0 0;
+}
+
+.home-help {
+  max-width: 640px;
+}
+
+.home-help .section-label {
+  text-align: center;
+}
+
+.home-help .faq-page-lead {
+  margin-bottom: 1.75rem;
+}
+
+.home-pricing {
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
+}
+
+.home-pricing .section-label {
+  margin-bottom: 0.75rem;
+}
+
+.page-sub.section-dark {
+  background: var(--bg-dark);
+  color: var(--text);
+}
+
+.page-sub.section-dark .section-label {
+  color: var(--text);
 }
 
 .pricing-lead {

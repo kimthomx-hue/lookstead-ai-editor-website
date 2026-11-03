@@ -32,14 +32,14 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=20261103b" />
     <script src="/assets/auth-redirect.js"></script>
   </head>
-  <body data-nav-active="home">
+  <body data-nav-active="home" data-single-page="true">
     <header class="site-header" id="site-header"></header>
 
     <main>
-      <section class="hero" aria-label="Introduction">
+      <section class="hero" id="top" aria-label="Introduction">
         <div class="hero-slides">
           <article class="hero-slide is-active" data-slide="0">
             <h1>Turn long videos into scroll-stopping shorts.</h1>
@@ -66,7 +66,7 @@
 
         <div class="hero-actions">
           <a class="btn btn-primary app-store-link" href="/download/">Get the app</a>
-          <a class="btn btn-ghost" href="/how/">How it works</a>
+          <a class="btn btn-ghost nav-scroll" href="#how">How it works</a>
         </div>
 
         <div class="hero-dots" role="tablist" aria-label="Hero slides">
@@ -76,37 +76,115 @@
         </div>
       </section>
 
-      <section class="section section-dark pricing-teaser" aria-labelledby="plans-teaser-heading">
-        <div class="section-inner narrow">
-          <h2 id="plans-teaser-heading" class="section-label">Pick your plan</h2>
-          <p class="pricing-teaser-lead">
-            Start free with core editing and 720p export. Upgrade in the app for watermark-free 1080p,
-            AI captions, and higher project limits.
-          </p>
-          <div class="pricing-teaser-tiers" aria-hidden="true">
-            <span class="pricing-teaser-pill">Free</span>
-            <span class="pricing-teaser-pill is-highlight">Pro from £1 first month</span>
-            <span class="pricing-teaser-pill">Creator</span>
-            <span class="pricing-teaser-pill">Studio</span>
-          </div>
-          <a class="btn btn-primary" href="/pricing/">Compare plans</a>
+      <section class="section section-dark home-section" id="features" aria-labelledby="features-heading">
+        <div class="section-inner">
+          <h2 id="features-heading" class="section-label">Features</h2>
+          <ul class="feature-grid">
+            <li>
+              <h3>Trim &amp; cut</h3>
+              <p>Set in and out points on a thumbnail timeline, then export the selected clip.</p>
+            </li>
+            <li>
+              <h3>Vertical formatting</h3>
+              <p>Preview 9:16, 1:1, 4:5 and 16:9 frames before you export.</p>
+            </li>
+            <li>
+              <h3>Photo overlays</h3>
+              <p>Crop images with pinch, drag handles and rotation, then place them on your video.</p>
+            </li>
+            <li>
+              <h3>Clip suggestions</h3>
+              <p><em>Coming soon.</em> Long-form uploads analysed for hooks and highlight moments.</p>
+            </li>
+            <li>
+              <h3>Auto captions</h3>
+              <p><em>Coming soon.</em> Word-level captions with creator-friendly styles.</p>
+            </li>
+            <li>
+              <h3>YouTube import</h3>
+              <p><em>Coming soon.</em> The app validates links today; download is not enabled yet.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="section section-muted" aria-labelledby="about-heading">
+      <section class="section section-dark home-section" id="how" aria-labelledby="how-heading">
         <div class="section-inner narrow">
-          <h2 id="about-heading" class="section-label">A creator-first mobile editor</h2>
-          <p class="pricing-lead">
-            <strong>Lookstead</strong> is built for short-form creators who want professional results
-            without a desktop timeline. Trim clips, preview aspect ratios, layer cropped photos on your
-            footage, and export to your camera roll, with smarter clip selection and auto-captions
-            arriving in future updates.
+          <h2 id="how-heading" class="section-label">How it works</h2>
+          <ol class="steps steps-on-dark">
+            <li><strong>Upload a video</strong> from Photos or Files on your iPhone.</li>
+            <li><strong>Trim the best section</strong> with the visual timeline.</li>
+            <li><strong>Add photo overlays</strong> using the built-in crop editor.</li>
+            <li><strong>Pick a format</strong> for TikTok, Reels or Shorts.</li>
+            <li><strong>Export</strong> to your photo library (development or store build).</li>
+          </ol>
+          <p class="section-cta-row">
+            <a class="btn btn-primary app-store-link" href="/download/">Get the app</a>
           </p>
-          <p class="pricing-lead">
-            Explore <a href="/features/">features</a>, <a href="/pricing/">pricing</a>, or read the
-            <a href="/help/">help centre</a>, <a href="/privacy/">privacy policy</a>, and
-            <a href="/terms/">terms of service</a>.
+        </div>
+      </section>
+
+      <section class="section section-dark home-section home-pricing" id="pricing" aria-labelledby="pricing-heading">
+        <div class="section-inner pricing-inner">
+          <header class="pricing-header">
+            <h2 id="pricing-heading" class="section-label">Pick your plan</h2>
+            <p class="pricing-intro">
+              Same plans as in the Lookstead app. Subscribe on iPhone after you install; prices below are
+              marketing estimates until App Store checkout loads live amounts.
+            </p>
+          </header>
+
+          <div class="billing-toggle" role="group" aria-label="Billing period">
+            <div class="billing-toggle-track">
+              <button
+                type="button"
+                class="billing-segment is-active"
+                id="billing-monthly"
+                aria-pressed="true">
+                Monthly
+              </button>
+              <button type="button" class="billing-segment" id="billing-annual" aria-pressed="false">
+                Annually
+              </button>
+            </div>
+            <p class="billing-hint" id="billing-hint">Intro offers on monthly plans</p>
+          </div>
+
+          <div id="plan-list" class="plan-list" aria-live="polite"></div>
+
+          <p class="pricing-fine">
+            Subscriptions are billed through Apple or Google. Cancel anytime in your device subscription
+            settings. Intro pricing applies to eligible new subscribers on monthly plans for the first
+            billing period, then standard monthly rates unless you cancel.
           </p>
+
+          <div class="pricing-actions">
+            <a class="btn btn-primary btn-lg app-store-link" href="/download/">Get the app</a>
+          </div>
+
+          <p class="pricing-legal">
+            <a href="/terms/">Terms of Use</a>
+            ·
+            <a href="/privacy/">Privacy</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-muted home-section" id="help" aria-labelledby="help-heading">
+        <div class="section-inner narrow home-help">
+          <h2 id="help-heading" class="section-label section-label-dark">Help</h2>
+          <p class="faq-page-lead">Editing, export, overlays, subscriptions, and what&apos;s coming next.</p>
+
+          <div id="faq-list" class="faq-list"></div>
+          <button type="button" class="faq-see-all" id="faq-see-all" hidden>See all questions</button>
+
+          <section class="faq-contact">
+            <h3 class="faq-contact-title">Still need help?</h3>
+            <p>
+              Email <a href="mailto:support@lookstead.com">support@lookstead.com</a> with your device, iOS
+              version, and what you tried.
+            </p>
+          </section>
         </div>
       </section>
     </main>
@@ -114,6 +192,10 @@
     <footer class="site-footer" id="site-footer"></footer>
 
     <script src="/assets/site-chrome.js"></script>
+    <script src="/assets/subscription-plans.js"></script>
+    <script src="/assets/pricing-page.js"></script>
+    <script src="/help.js"></script>
+    <script src="/assets/scroll-nav.js"></script>
     <script src="/main.js" defer></script>
   </body>
 </html>
