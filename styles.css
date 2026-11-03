@@ -730,3 +730,249 @@ a {
     padding: 0.5rem 0.75rem;
   }
 }
+
+/* Pricing page (matches in-app paywall structure) */
+.pricing-page {
+  background: var(--bg-dark);
+  color: var(--text);
+}
+
+.pricing-page .section-label {
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.pricing-inner {
+  max-width: 640px;
+}
+
+.pricing-header {
+  margin-bottom: 1.75rem;
+}
+
+.pricing-intro {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.billing-toggle {
+  margin-bottom: 1.5rem;
+}
+
+.billing-toggle-track {
+  display: flex;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.billing-segment {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.billing-segment.is-active {
+  background: var(--accent);
+  color: #1a0f24;
+}
+
+.billing-hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.plan-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-card);
+  padding: 1.15rem 1.25rem 1rem;
+}
+
+.plan-card-recommended {
+  border-color: rgba(168, 85, 247, 0.65);
+  box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.25), 0 8px 28px rgba(168, 85, 247, 0.12);
+}
+
+.plan-badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #22c55e;
+  border-radius: 6px;
+}
+
+.plan-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.plan-price-main {
+  margin: 0.35rem 0 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.plan-price-sub {
+  margin: 0.15rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.plan-meta {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  color: rgba(245, 245, 247, 0.55);
+}
+
+.plan-blurb {
+  margin: 0.45rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.plan-benefits-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.85rem;
+  padding: 0.65rem 0 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.plan-chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text-muted);
+  border-bottom: 2px solid var(--text-muted);
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform 0.15s ease;
+}
+
+.plan-benefits-toggle[aria-expanded='true'] .plan-chevron {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.plan-benefits-list {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.plan-benefit-item {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.plan-benefit-item strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+
+.plan-benefit-item span {
+  color: var(--text-muted);
+}
+
+.pricing-fine {
+  margin: 1.25rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(245, 245, 247, 0.55);
+}
+
+.pricing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+}
+
+.pricing-legal {
+  margin: 1.25rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.pricing-legal a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pricing-teaser {
+  text-align: center;
+}
+
+.pricing-teaser-lead {
+  margin: 0 auto 1.25rem;
+  max-width: 32rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.pricing-teaser-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.pricing-teaser-pill {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.pricing-teaser-pill.is-highlight {
+  border-color: rgba(168, 85, 247, 0.5);
+  background: rgba(168, 85, 247, 0.12);
+}

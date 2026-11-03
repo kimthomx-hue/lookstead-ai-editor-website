@@ -1,6 +1,6 @@
 /**
  * Forwards Supabase email auth into the Lookstead app.
- * Uses query params (not #hash) — iOS often drops hash fragments on custom URL schemes.
+ * Uses query params (not #hash); iOS often drops hash fragments on custom URL schemes.
  */
 (function () {
   var hash = window.location.hash || '';

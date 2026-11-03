@@ -3,7 +3,7 @@ const HELP_FEATURED_COUNT = 6;
 const HELP_FAQS = [
   {
     q: 'What can I do in Lookstead today?',
-    a: 'Import a video from Photos or Files, trim the clip, choose a vertical or square format, add cropped photo overlays, and export to your camera roll. Clip suggestions and YouTube import are planned — not live yet.',
+    a: 'Import a video from Photos or Files, trim the clip, choose a vertical or square format, add cropped photo overlays, and export to your camera roll. Clip suggestions and YouTube import are planned, not live yet.',
   },
   {
     q: 'Why does export say I need a development build?',
@@ -34,8 +34,20 @@ const HELP_FAQS = [
     a: 'No for basic editing. Create an account to save preferences across devices when cloud sync is available.',
   },
   {
-    q: 'Is there a subscription?',
-    a: 'The marketing site lists flexible pricing for the future. In-app subscriptions are not active in this release.',
+    q: 'What subscription plans does Lookstead offer?',
+    a: 'Free includes core editing, 720p export with a watermark, and limited AI credits. Pro adds no watermark, 1080p export, AI clip tools and captions. Creator and Studio add more projects, brand presets, and higher AI allowances. See the Pricing page for intro monthly and annual amounts.',
+  },
+  {
+    q: 'How do I cancel my subscription?',
+    a: 'Subscriptions are managed by Apple or Google, not inside Lookstead. On iPhone: Settings, your name, Subscriptions, Lookstead, Cancel. On Android: Google Play, Payments and subscriptions, Subscriptions.',
+  },
+  {
+    q: 'I paid but the app still shows a paywall.',
+    a: 'Tap Restore purchases in Settings or on the paywall. Use the same Apple ID or Google account you paid with. If it still fails, email support with your receipt.',
+  },
+  {
+    q: 'How do I request a refund?',
+    a: 'Refund requests go through the App Store or Google Play. Apple: reportaproblem.apple.com. Google: play.google.com/store/account/subscriptions. Lookstead cannot issue store refunds directly.',
   },
   {
     q: 'How do I contact support?',

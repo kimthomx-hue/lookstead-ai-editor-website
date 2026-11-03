@@ -1,4 +1,4 @@
-# Lookstead — marketing site
+# Lookstead marketing site
 
 Static marketing site for **Lookstead** (separate from the [Lookstead home assistant](https://github.com/kimthomx-hue/lookstead) site and the [Expo app](../lookstead-ai-editor) repo).
 
