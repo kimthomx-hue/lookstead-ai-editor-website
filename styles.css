@@ -26,12 +26,19 @@ html {
 
 body {
   margin: 0;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font);
   color: var(--text);
   background: var(--bg-dark);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -708,6 +715,27 @@ a {
   min-height: 70vh;
 }
 
+/* Light subpages (legacy markup): body defaults to light-on-dark text — force readable copy */
+.page-sub.section-muted {
+  background: #e8e6e0;
+  color: #20231f;
+}
+
+.page-sub.section-muted .section-label,
+.page-sub.section-muted h1,
+.page-sub.section-muted h2,
+.page-sub.section-muted .pricing-lead {
+  color: #20231f;
+}
+
+.page-sub.section-muted .pricing-card {
+  color: #20231f;
+}
+
+.page-sub.section-muted .pricing-card h2 {
+  color: #20231f;
+}
+
 .page-sub .section-inner {
   max-width: 1000px;
   margin: 0 auto;
@@ -733,6 +761,13 @@ a {
 
 /* Pricing page (matches in-app paywall structure) */
 .pricing-page {
+  background: var(--bg-dark);
+  color: var(--text);
+  min-height: calc(100svh - 8rem);
+  padding-bottom: 4rem;
+}
+
+.pricing-page.section-muted {
   background: var(--bg-dark);
   color: var(--text);
 }
