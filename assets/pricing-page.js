@@ -16,7 +16,9 @@
       return {
         amount: '£0',
         period: '/month',
-        sub: 'Core editing with 720p export and a watermark.',
+        offer: null,
+        after: null,
+        save: null,
       };
     }
 
@@ -27,14 +29,18 @@
       return {
         amount: annual.yearlyAmount,
         period: '/year',
-        sub: annual.perMonthEquivalent + '/mo equivalent · ' + annual.savingsHint,
+        offer: null,
+        after: annual.perMonthEquivalent + '/mo equivalent',
+        save: annual.savingsHint,
       };
     }
 
     return {
-      amount: prices.recurringAmount,
-      period: '/month',
-      sub: prices.introLabel + ' for eligible new subscribers',
+      amount: prices.introAmount,
+      period: ' first month',
+      offer: 'Intro price for eligible new subscribers',
+      after: 'Then ' + prices.recurringAmount + '/month',
+      save: null,
     };
   }
 
@@ -48,7 +54,9 @@
     }
     if (toggleHint) {
       toggleHint.textContent =
-        billing === 'annual' ? 'Save with annual billing' : 'Intro offers on monthly plans';
+        billing === 'annual'
+          ? 'Annual plans show how much you save vs paying monthly'
+          : 'Monthly plans show first-month intro pricing';
     }
     render();
   }
@@ -61,8 +69,8 @@
       var display = priceDisplay(planId);
       var benefits = data.planBenefits[planId] || [];
       var isRecommended = planId === data.recommendedPaidPlan;
-      var projects = data.maxActiveProjects[planId];
       var resolution = data.maxExportResolution[planId];
+      var projectsLabel = data.activeProjectsLimitLabel(planId);
 
       var card = document.createElement('article');
       card.className = 'plan-card' + (isRecommended ? ' plan-card-featured' : '');
@@ -78,14 +86,37 @@
       priceRow.querySelector('.plan-price-amount').textContent = display.amount;
       priceRow.querySelector('.plan-price-period').textContent = display.period;
 
+      card.appendChild(title);
+      card.appendChild(priceRow);
+
+      if (display.offer) {
+        var offer = document.createElement('p');
+        offer.className = 'plan-price-offer';
+        offer.textContent = display.offer;
+        card.appendChild(offer);
+      }
+
+      if (display.after) {
+        var after = document.createElement('p');
+        after.className = 'plan-price-after';
+        after.textContent = display.after;
+        card.appendChild(after);
+      }
+
+      if (display.save) {
+        var save = document.createElement('p');
+        save.className = 'plan-price-save';
+        save.textContent = display.save;
+        card.appendChild(save);
+      }
+
       var blurb = document.createElement('p');
       blurb.className = 'plan-blurb';
       blurb.textContent = copy.subtitle;
 
       var meta = document.createElement('p');
       meta.className = 'plan-meta';
-      meta.textContent =
-        'Up to ' + projects + ' projects · ' + resolution + ' export max';
+      meta.textContent = projectsLabel + ' · ' + resolution + ' export max';
 
       var includesLabel = document.createElement('p');
       includesLabel.className = 'plan-includes-label';
@@ -107,8 +138,6 @@
       cta.href = '/download/';
       cta.textContent = planId === 'free' ? 'Get started free' : 'Get started';
 
-      card.appendChild(title);
-      card.appendChild(priceRow);
       card.appendChild(blurb);
       card.appendChild(meta);
       card.appendChild(includesLabel);

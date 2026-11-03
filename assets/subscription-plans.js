@@ -1,6 +1,6 @@
 /**
  * Marketing subscription copy (mirrors lookstead-ai-editor/constants/subscriptions.ts).
- * Update both when plan pricing or benefits change.
+ * Update both files whenever pricing, benefits, or plan limits change.
  */
 (function () {
   var FREE_MONTHLY_AI_CREDITS = 10;
@@ -30,17 +30,20 @@
     pro: {
       yearlyAmount: '£89.99',
       perMonthEquivalent: '£7.50',
-      savingsHint: 'Save ~£18 vs paying monthly',
+      savingsAmount: '£18',
+      savingsHint: 'Save £18 vs 12 monthly payments',
     },
     creator: {
       yearlyAmount: '£199.99',
       perMonthEquivalent: '£16.67',
-      savingsHint: 'Save ~£40 vs paying monthly',
+      savingsAmount: '£40',
+      savingsHint: 'Save £40 vs 12 monthly payments',
     },
     studio: {
       yearlyAmount: '£549.99',
       perMonthEquivalent: '£45.83',
-      savingsHint: 'Save ~£110 vs paying monthly',
+      savingsAmount: '£110',
+      savingsHint: 'Save £110 vs 12 monthly payments',
     },
   };
 
@@ -70,6 +73,7 @@
   var PLAN_BENEFITS = {
     free: [
       { title: 'Basic video editing', subtitle: 'Trim, text overlays and timeline editing.' },
+      { title: 'Unlimited active projects', subtitle: 'Create as many edits as you need on Free.' },
       { title: '720p export', subtitle: 'Share drafts with a Lookstead watermark.' },
       {
         title: 'Limited AI credits',
@@ -103,6 +107,16 @@
     ],
   };
 
+  var MAX_ACTIVE_PROJECTS = { free: null, pro: 12, creator: 30, studio: 100 };
+
+  function activeProjectsLimitLabel(planId) {
+    var limit = MAX_ACTIVE_PROJECTS[planId];
+    if (limit == null) {
+      return 'Unlimited active projects';
+    }
+    return 'Up to ' + limit + ' active projects';
+  }
+
   window.LOOKSTEAD_PLANS = {
     planOrder: ['free', 'pro', 'creator', 'studio'],
     recommendedPaidPlan: 'pro',
@@ -111,7 +125,8 @@
     marketingAnnualPrices: MARKETING_ANNUAL_PRICES,
     planCopy: PLAN_COPY,
     planBenefits: PLAN_BENEFITS,
-    maxActiveProjects: { free: 3, pro: 12, creator: 30, studio: 100 },
+    maxActiveProjects: MAX_ACTIVE_PROJECTS,
     maxExportResolution: { free: '720p', pro: '1080p', creator: '1080p', studio: 'Original' },
+    activeProjectsLimitLabel: activeProjectsLimitLabel,
   };
 })();
