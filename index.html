@@ -32,7 +32,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=20261103b" />
+    <link rel="stylesheet" href="/styles.css?v=20261103c" />
     <script src="/assets/auth-redirect.js"></script>
   </head>
   <body data-nav-active="home" data-single-page="true">
@@ -125,17 +125,18 @@
       </section>
 
       <section class="section section-dark home-section home-pricing" id="pricing" aria-labelledby="pricing-heading">
-        <div class="section-inner pricing-inner">
-          <header class="pricing-header">
-            <h2 id="pricing-heading" class="section-label">Pick your plan</h2>
+        <div class="section-inner pricing-inner pricing-inner-wide">
+          <header class="pricing-header pricing-header-centered">
+            <p class="pricing-eyebrow">Our pricing</p>
+            <h2 id="pricing-heading" class="pricing-title">Choose the plan that suits you</h2>
             <p class="pricing-intro">
-              Same plans as in the Lookstead app. Subscribe on iPhone after you install; prices below are
-              marketing estimates until App Store checkout loads live amounts.
+              Flexible pricing for every stage, from your first edit to daily publishing. Same tiers as
+              the app; checkout amounts come from the App Store when you subscribe.
             </p>
           </header>
 
-          <div class="billing-toggle" role="group" aria-label="Billing period">
-            <div class="billing-toggle-track">
+          <div class="billing-toggle billing-toggle-centered" role="group" aria-label="Billing period">
+            <div class="billing-toggle-track billing-toggle-track-compact">
               <button
                 type="button"
                 class="billing-segment is-active"
@@ -150,19 +151,15 @@
             <p class="billing-hint" id="billing-hint">Intro offers on monthly plans</p>
           </div>
 
-          <div id="plan-list" class="plan-list" aria-live="polite"></div>
+          <div id="plan-list" class="plan-list plan-list-grid" aria-live="polite"></div>
 
-          <p class="pricing-fine">
+          <p class="pricing-fine pricing-fine-centered">
             Subscriptions are billed through Apple or Google. Cancel anytime in your device subscription
             settings. Intro pricing applies to eligible new subscribers on monthly plans for the first
             billing period, then standard monthly rates unless you cancel.
           </p>
 
-          <div class="pricing-actions">
-            <a class="btn btn-primary btn-lg app-store-link" href="/download/">Get the app</a>
-          </div>
-
-          <p class="pricing-legal">
+          <p class="pricing-legal pricing-legal-centered">
             <a href="/terms/">Terms of Use</a>
             ·
             <a href="/privacy/">Privacy</a>

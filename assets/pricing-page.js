@@ -6,26 +6,35 @@
 
   var data = window.LOOKSTEAD_PLANS;
   var billing = 'monthly';
-  var expandedPlan = null;
 
   var toggleMonthly = document.getElementById('billing-monthly');
   var toggleAnnual = document.getElementById('billing-annual');
   var toggleHint = document.getElementById('billing-hint');
-  function priceLines(planId) {
+
+  function priceDisplay(planId) {
     if (planId === 'free') {
-      return { main: 'Free', sub: data.planCopy.free.priceHint };
+      return {
+        amount: '£0',
+        period: '/month',
+        sub: 'Core editing with 720p export and a watermark.',
+      };
     }
+
     var prices = data.marketingPrices[planId];
     var annual = data.marketingAnnualPrices[planId];
+
     if (billing === 'annual') {
       return {
-        main: annual.yearlyAmount + ' per year',
+        amount: annual.yearlyAmount,
+        period: '/year',
         sub: annual.perMonthEquivalent + '/mo equivalent · ' + annual.savingsHint,
       };
     }
+
     return {
-      main: prices.introLabel,
-      sub: prices.recurringLabel,
+      amount: prices.recurringAmount,
+      period: '/month',
+      sub: prices.introLabel + ' for eligible new subscribers',
     };
   }
 
@@ -49,99 +58,69 @@
 
     data.planOrder.forEach(function (planId) {
       var copy = data.planCopy[planId];
-      var lines = priceLines(planId);
+      var display = priceDisplay(planId);
       var benefits = data.planBenefits[planId] || [];
       var isRecommended = planId === data.recommendedPaidPlan;
-      var isExpanded = expandedPlan === planId;
       var projects = data.maxActiveProjects[planId];
       var resolution = data.maxExportResolution[planId];
 
       var card = document.createElement('article');
-      card.className = 'plan-card' + (isRecommended ? ' plan-card-recommended' : '');
+      card.className = 'plan-card' + (isRecommended ? ' plan-card-featured' : '');
 
-      var header = document.createElement('div');
-      header.className = 'plan-card-header';
-
-      if (isRecommended) {
-        var badge = document.createElement('span');
-        badge.className = 'plan-badge';
-        badge.textContent = 'Recommended';
-        header.appendChild(badge);
-      }
-
-      var titleRow = document.createElement('div');
-      titleRow.className = 'plan-title-row';
-
-      var titleBlock = document.createElement('div');
-      titleBlock.className = 'plan-title-block';
-
-      var title = document.createElement('h2');
+      var title = document.createElement('h3');
       title.className = 'plan-title';
       title.textContent = copy.title;
 
-      var priceMain = document.createElement('p');
-      priceMain.className = 'plan-price-main';
-      priceMain.textContent = lines.main;
+      var priceRow = document.createElement('p');
+      priceRow.className = 'plan-price-row';
+      priceRow.innerHTML =
+        '<span class="plan-price-amount"></span><span class="plan-price-period"></span>';
+      priceRow.querySelector('.plan-price-amount').textContent = display.amount;
+      priceRow.querySelector('.plan-price-period').textContent = display.period;
 
-      titleBlock.appendChild(title);
-      titleBlock.appendChild(priceMain);
-
-      if (planId !== 'free') {
-        var priceSub = document.createElement('p');
-        priceSub.className = 'plan-price-sub';
-        priceSub.textContent = lines.sub;
-        titleBlock.appendChild(priceSub);
-      } else {
-        var priceSubFree = document.createElement('p');
-        priceSubFree.className = 'plan-price-sub';
-        priceSubFree.textContent = lines.sub;
-        titleBlock.appendChild(priceSubFree);
-      }
+      var blurb = document.createElement('p');
+      blurb.className = 'plan-blurb';
+      blurb.textContent = copy.subtitle;
 
       var meta = document.createElement('p');
       meta.className = 'plan-meta';
       meta.textContent =
         'Up to ' + projects + ' projects · ' + resolution + ' export max';
 
-      var blurb = document.createElement('p');
-      blurb.className = 'plan-blurb';
-      blurb.textContent = copy.subtitle;
+      var includesLabel = document.createElement('p');
+      includesLabel.className = 'plan-includes-label';
+      includesLabel.textContent = "What's included";
 
-      titleBlock.appendChild(meta);
-      titleBlock.appendChild(blurb);
-      titleRow.appendChild(titleBlock);
-      header.appendChild(titleRow);
-      card.appendChild(header);
-
-      var benefitsToggle = document.createElement('button');
-      benefitsToggle.type = 'button';
-      benefitsToggle.className = 'plan-benefits-toggle';
-      benefitsToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-      benefitsToggle.innerHTML =
-        '<span>See benefits</span><span class="plan-chevron" aria-hidden="true"></span>';
-      benefitsToggle.addEventListener('click', function () {
-        expandedPlan = expandedPlan === planId ? null : planId;
-        render();
+      var list = document.createElement('ul');
+      list.className = 'plan-includes-list';
+      benefits.forEach(function (b) {
+        var item = document.createElement('li');
+        item.className = 'plan-includes-item';
+        item.innerHTML =
+          '<span class="plan-check" aria-hidden="true"></span><span></span>';
+        item.querySelector('span:last-child').textContent = b.title;
+        list.appendChild(item);
       });
-      card.appendChild(benefitsToggle);
 
-      if (isExpanded) {
-        var list = document.createElement('ul');
-        list.className = 'plan-benefits-list';
-        benefits.forEach(function (b) {
-          var item = document.createElement('li');
-          item.className = 'plan-benefit-item';
-          item.innerHTML =
-            '<strong></strong><span></span>';
-          item.querySelector('strong').textContent = b.title;
-          item.querySelector('span').textContent = b.subtitle;
-          list.appendChild(item);
-        });
-        card.appendChild(list);
-      }
+      var cta = document.createElement('a');
+      cta.className = 'plan-cta app-store-link';
+      cta.href = '/download/';
+      cta.textContent = planId === 'free' ? 'Get started free' : 'Get started';
+
+      card.appendChild(title);
+      card.appendChild(priceRow);
+      card.appendChild(blurb);
+      card.appendChild(meta);
+      card.appendChild(includesLabel);
+      card.appendChild(list);
+      card.appendChild(cta);
 
       root.appendChild(card);
     });
+
+    if (window.__looksteadBindAppStoreLinks) {
+      window.__looksteadBindAppStoreLinks();
+    }
   }
 
   if (toggleMonthly) {

@@ -79,10 +79,19 @@
     }
   }
 
-  document.querySelectorAll('.app-store-link').forEach((el) => {
-    el.setAttribute('href', appStoreHref());
-    el.addEventListener('click', openAppStore);
-  });
+  function bindAppStoreLinks() {
+    document.querySelectorAll('.app-store-link').forEach((el) => {
+      el.setAttribute('href', appStoreHref());
+      if (el.dataset.appStoreBound === 'true') {
+        return;
+      }
+      el.dataset.appStoreBound = 'true';
+      el.addEventListener('click', openAppStore);
+    });
+  }
+
+  window.__looksteadBindAppStoreLinks = bindAppStoreLinks;
+  bindAppStoreLinks();
 
   document.querySelectorAll('.email-contact-link').forEach((el) => {
     el.addEventListener('click', openEmailContact);
