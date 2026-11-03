@@ -35,7 +35,7 @@ const HELP_FAQS = [
   },
   {
     q: 'What subscription plans does Lookstead offer?',
-    a: 'Free includes core editing, 720p export with a watermark, and limited AI credits. Pro adds no watermark, 1080p export, AI clip tools and captions. Creator and Studio add more projects, brand presets, and higher AI allowances. See the Pricing page for intro monthly and annual amounts.',
+    a: 'Free includes core editing, professional export settings (1080p, 2K and 4K where your device supports them, frame rates and bitrate control) with a Lookstead watermark, and limited AI credits. Pro removes the watermark and adds AI clip tools, captions and premium styles. Creator and Studio add more projects, brand presets, and higher AI allowances. See the Pricing page for intro monthly and annual amounts.',
   },
   {
     q: 'How do I cancel my subscription?',

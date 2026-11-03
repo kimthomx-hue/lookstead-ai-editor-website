@@ -50,12 +50,12 @@
   var PLAN_COPY = {
     free: {
       title: 'Free',
-      subtitle: 'Start editing with core tools and 720p export.',
+      subtitle: 'Full professional export quality with core editing tools.',
       priceHint: '£0/month',
     },
     pro: {
       title: 'Pro',
-      subtitle: 'No watermark, 1080p export, AI captions and premium styles.',
+      subtitle: 'No watermark, AI captions, clip detection and premium styles.',
       priceHint: MARKETING_PRICES.pro.introLabel,
     },
     creator: {
@@ -74,7 +74,11 @@
     free: [
       { title: 'Basic video editing', subtitle: 'Trim, text overlays and timeline editing.' },
       { title: 'Unlimited active projects', subtitle: 'Create as many edits as you need on Free.' },
-      { title: '720p export', subtitle: 'Share drafts with a Lookstead watermark.' },
+      {
+        title: 'Pro export quality',
+        subtitle: '1080p, 2K and 4K (where supported), frame rates and bitrate control.',
+      },
+      { title: 'Lookstead watermark', subtitle: 'Upgrade to Pro to export without the watermark.' },
       {
         title: 'Limited AI credits',
         subtitle: FREE_MONTHLY_AI_CREDITS + ' AI actions per month.',
@@ -83,13 +87,13 @@
     ],
     pro: [
       { title: 'No watermark', subtitle: 'Clean exports for social and clients.' },
-      { title: '1080p export', subtitle: 'Sharp HD output for every platform.' },
       { title: 'AI clip detection', subtitle: 'Find strong moments automatically.' },
       { title: 'AI captions', subtitle: 'Generated captions with premium animated styles.' },
+      { title: 'Premium editing styles', subtitle: 'Animated captions and pro looks.' },
       { title: 'More AI credits', subtitle: 'Higher monthly allowance than Free.' },
     ],
     creator: [
-      { title: 'Everything in Pro', subtitle: 'All Pro export and AI caption features.' },
+      { title: 'Everything in Pro', subtitle: 'All Pro AI and caption features.' },
       { title: 'More active projects', subtitle: 'Keep more edits in progress at once.' },
       { title: 'Advanced AI clip selection', subtitle: 'Fine-tune which moments make the cut.' },
       { title: 'Custom brand presets', subtitle: 'Save fonts, colors and layouts.' },
@@ -100,10 +104,7 @@
       { title: 'Highest AI allowance', subtitle: 'Built for daily publishing teams.' },
       { title: 'Batch short creation', subtitle: 'Generate multiple clips from one source.' },
       { title: 'Advanced moment detection', subtitle: 'Deep AI scan for hooks and peaks.' },
-      {
-        title: 'Premium templates',
-        subtitle: 'Studio brand kits and higher-res export where supported.',
-      },
+      { title: 'Premium templates', subtitle: 'Studio brand kits and batch publishing tools.' },
     ],
   };
 
@@ -126,7 +127,7 @@
     planCopy: PLAN_COPY,
     planBenefits: PLAN_BENEFITS,
     maxActiveProjects: MAX_ACTIVE_PROJECTS,
-    maxExportResolution: { free: '720p', pro: '1080p', creator: '1080p', studio: 'Original' },
+    exportQualityNote: '1080p, 2K and 4K exports included on Free (device permitting)',
     activeProjectsLimitLabel: activeProjectsLimitLabel,
   };
 })();

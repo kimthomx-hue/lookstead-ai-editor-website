@@ -69,8 +69,8 @@
       var display = priceDisplay(planId);
       var benefits = data.planBenefits[planId] || [];
       var isRecommended = planId === data.recommendedPaidPlan;
-      var resolution = data.maxExportResolution[planId];
       var projectsLabel = data.activeProjectsLimitLabel(planId);
+      var exportNote = data.exportQualityNote || 'Pro export quality on every plan';
 
       var card = document.createElement('article');
       card.className = 'plan-card' + (isRecommended ? ' plan-card-featured' : '');
@@ -116,7 +116,7 @@
 
       var meta = document.createElement('p');
       meta.className = 'plan-meta';
-      meta.textContent = projectsLabel + ' · ' + resolution + ' export max';
+      meta.textContent = projectsLabel + ' · ' + exportNote;
 
       var includesLabel = document.createElement('p');
       includesLabel.className = 'plan-includes-label';
