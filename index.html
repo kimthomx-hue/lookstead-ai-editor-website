@@ -32,7 +32,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=20261103d" />
+    <link rel="stylesheet" href="/styles.css?v=20261104a" />
     <script src="/assets/auth-redirect.js"></script>
   </head>
   <body data-nav-active="home" data-single-page="true">
@@ -40,45 +40,90 @@
 
     <main>
       <section class="hero" id="top" aria-label="Introduction">
-        <div class="hero-slides">
-          <article class="hero-slide is-active" data-slide="0">
-            <h1>Turn long videos into scroll-stopping shorts.</h1>
-            <p class="hero-lead">
-              Find the best moments, create beautiful captions and transform your videos into content
-              ready for TikTok, Reels and YouTube Shorts.
-            </p>
-          </article>
-          <article class="hero-slide" data-slide="1">
-            <p class="hero-headline">Edit on your iPhone.</p>
-            <p class="hero-lead">
-              Import from Photos or Files, trim with a visual timeline, pick vertical or square formats,
-              and add cropped photo overlays with a precise crop editor.
-            </p>
-          </article>
-          <article class="hero-slide" data-slide="2">
-            <p class="hero-headline">Smarter workflows, coming soon.</p>
-            <p class="hero-lead">
-              Automatic clip suggestions, animated captions, and compliant YouTube import are on the
-              roadmap. Today’s app focuses on a fast, reliable mobile editor.
-            </p>
-          </article>
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-slides">
+              <article class="hero-slide is-active" data-slide="0">
+                <h1>Turn long videos into scroll-stopping shorts.</h1>
+                <p class="hero-lead">
+                  Find the best moments, create beautiful captions and transform your videos into content
+                  ready for TikTok, Reels and YouTube Shorts.
+                </p>
+              </article>
+              <article class="hero-slide" data-slide="1">
+                <p class="hero-headline">Edit on your iPhone.</p>
+                <p class="hero-lead">
+                  Import from Photos or Files, trim with a visual timeline, pick vertical or square formats,
+                  and add cropped photo overlays with a precise crop editor.
+                </p>
+              </article>
+              <article class="hero-slide" data-slide="2">
+                <p class="hero-headline">Smarter workflows, coming soon.</p>
+                <p class="hero-lead">
+                  Automatic clip suggestions, animated captions, and compliant YouTube import are on the
+                  roadmap. Today’s app focuses on a fast, reliable mobile editor.
+                </p>
+              </article>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary app-store-link" href="/download/">Get the app</a>
+              <a class="btn btn-ghost nav-scroll" href="#how">How it works</a>
+            </div>
+            <div class="hero-dots" role="tablist" aria-label="Hero slides">
+              <button type="button" class="dot is-active" data-goto="0" aria-label="Slide 1" aria-selected="true"></button>
+              <button type="button" class="dot" data-goto="1" aria-label="Slide 2" aria-selected="false"></button>
+              <button type="button" class="dot" data-goto="2" aria-label="Slide 3" aria-selected="false"></button>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-art-frame">
+              <span class="hero-art-topline"><span></span> LOOKSTEAD / EDITOR</span>
+              <div class="hero-art-preview">
+                <span class="hero-art-play"></span>
+                <span class="hero-art-caption">Find your next<br />great moment.</span>
+              </div>
+              <div class="hero-art-timeline">
+                <span class="hero-art-track hero-art-track-video"></span>
+                <span class="hero-art-track hero-art-track-audio"></span>
+                <span class="hero-art-playhead"></span>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary app-store-link" href="/download/">Get the app</a>
-          <a class="btn btn-ghost nav-scroll" href="#how">How it works</a>
-        </div>
-
-        <div class="hero-dots" role="tablist" aria-label="Hero slides">
-          <button type="button" class="dot is-active" data-goto="0" aria-label="Slide 1" aria-selected="true"></button>
-          <button type="button" class="dot" data-goto="1" aria-label="Slide 2" aria-selected="false"></button>
-          <button type="button" class="dot" data-goto="2" aria-label="Slide 3" aria-selected="false"></button>
+        <div class="hero-proof-strip" aria-label="Made for your editing workflow">
+          <span>TRIM WITH PRECISION</span><i></i>
+          <span>MAKE EVERY FRAME FIT</span><i></i>
+          <span>DESIGNED FOR IPHONE</span><i></i>
+          <span>READY FOR SHORT-FORM</span>
         </div>
       </section>
 
       <section class="section section-dark home-section" id="features" aria-labelledby="features-heading">
         <div class="section-inner">
-          <h2 id="features-heading" class="section-label">Features</h2>
+          <header class="showcase-heading">
+            <p class="section-kicker"><span aria-hidden="true">✦</span> THE EDITOR</p>
+            <h2 id="features-heading">A little more control.<br />A lot more room to create.</h2>
+            <p>Every essential tool, thoughtfully arranged for editing on your iPhone.</p>
+          </header>
+          <div class="editor-showcase" aria-hidden="true">
+            <div class="editor-showcase-screen">
+              <div class="editor-showcase-video">
+                <span class="editor-showcase-glow"></span>
+                <span class="editor-showcase-play"></span>
+                <span class="editor-showcase-time">00:12 <b>/</b> 00:48</span>
+              </div>
+              <div class="editor-showcase-controls">
+                <span>◀</span><span class="editor-showcase-control-play">▶</span><span>↗</span>
+              </div>
+            </div>
+            <div class="editor-showcase-timeline">
+              <div class="editor-showcase-ruler"><span>00:00</span><span>00:10</span><span>00:20</span><span>00:30</span></div>
+              <div class="editor-showcase-track"><i></i><i></i><i></i><i></i><b></b></div>
+              <div class="editor-showcase-track editor-showcase-track-overlay"><i></i><i></i><b></b></div>
+              <div class="editor-showcase-track editor-showcase-track-audio"><i></i><b></b></div>
+              <span class="editor-showcase-cursor"></span>
+            </div>
+          </div>
           <ul class="feature-grid">
             <li>
               <h3>Trim &amp; cut</h3>
@@ -113,14 +158,41 @@
       </section>
 
       <section class="section section-dark home-section" id="how" aria-labelledby="how-heading">
-        <div class="section-inner narrow">
-          <h2 id="how-heading" class="section-label">How it works</h2>
-          <ol class="steps steps-on-dark">
-            <li><strong>Upload a video</strong> from Photos or Files on your iPhone.</li>
-            <li><strong>Trim the best section</strong> with the visual timeline.</li>
-            <li><strong>Add photo overlays</strong> using the built-in crop editor.</li>
-            <li><strong>Pick a format</strong> for TikTok, Reels or Shorts.</li>
-            <li><strong>Export</strong> to your photo library (development or store build).</li>
+        <div class="section-inner workflow-inner">
+          <header class="showcase-heading">
+            <p class="section-kicker"><span aria-hidden="true">↗</span> HOW IT WORKS</p>
+            <h2 id="how-heading">From first import<br />to finished video.</h2>
+            <p>A simple, hands-on workflow that keeps you in control at every step.</p>
+          </header>
+          <div class="workflow-board" aria-hidden="true">
+            <div class="workflow-board-pane">
+              <div class="workflow-pane-label"><span>01 / YOUR FOOTAGE</span><span>Ready to edit</span></div>
+              <div class="workflow-source-card">
+                <span class="workflow-source-icon">▶</span>
+                <span><b>Weekend highlights</b><small>Video · 00:48</small></span>
+                <span class="workflow-source-check">✓</span>
+              </div>
+              <div class="workflow-source-card workflow-source-card-muted">
+                <span class="workflow-source-icon">▧</span>
+                <span><b>Choose from Photos</b><small>Or browse your Files</small></span>
+                <span>＋</span>
+              </div>
+            </div>
+            <div class="workflow-board-arrow" aria-hidden="true">→</div>
+            <div class="workflow-board-pane workflow-board-pane-edit">
+              <div class="workflow-pane-label"><span>02 / YOUR EDIT</span><span class="workflow-live"><i></i> Preview</span></div>
+              <div class="workflow-mini-preview"><span class="workflow-mini-play">▶</span><span>Preview your story</span></div>
+              <div class="workflow-mini-timeline">
+                <span class="workflow-mini-ruler"><i>00:00</i><i>00:10</i><i>00:20</i><i>00:30</i></span>
+                <span class="workflow-mini-video"><i></i><i></i><i></i></span>
+                <span class="workflow-mini-audio"><i></i></span>
+              </div>
+            </div>
+          </div>
+          <ol class="steps steps-on-dark workflow-steps">
+            <li><span>01</span><strong>Bring in a video</strong><p>Choose footage from Photos or Files on your iPhone.</p></li>
+            <li><span>02</span><strong>Shape your story</strong><p>Trim on the visual timeline and add photo overlays.</p></li>
+            <li><span>03</span><strong>Make it yours</strong><p>Pick a format, preview your edit, then export.</p></li>
           </ol>
           <p class="section-cta-row">
             <a class="btn btn-primary app-store-link" href="/download/">Get the app</a>
