@@ -35,10 +35,20 @@
       };
     }
 
+    if (planId !== 'pro') {
+      return {
+        amount: prices.recurringAmount,
+        period: '/month',
+        offer: null,
+        after: 'Billed monthly. Cancel anytime.',
+        save: null,
+      };
+    }
+
     return {
       amount: prices.introAmount,
       period: ' first month',
-      offer: 'Intro price for eligible new subscribers',
+      offer: '£1 for the first month for eligible new Pro subscribers',
       after: 'Then ' + prices.recurringAmount + '/month',
       save: null,
     };
@@ -56,7 +66,7 @@
       toggleHint.textContent =
         billing === 'annual'
           ? 'Annual plans show how much you save vs paying monthly'
-          : 'Monthly plans show first-month intro pricing';
+          : 'Pro is £1 for the first month for eligible new subscribers';
     }
     render();
   }
@@ -70,6 +80,7 @@
       var benefits = data.planBenefits[planId] || [];
       var isRecommended = planId === data.recommendedPaidPlan;
       var projectsLabel = data.activeProjectsLimitLabel(planId);
+      var importLimitLabel = data.externalVideoImportsLimitLabel(planId);
       var exportNote = data.exportQualityNote || 'Pro export quality on every plan';
 
       var card = document.createElement('article');
@@ -116,7 +127,7 @@
 
       var meta = document.createElement('p');
       meta.className = 'plan-meta';
-      meta.textContent = projectsLabel + ' · ' + exportNote;
+      meta.textContent = projectsLabel + ' · ' + importLimitLabel + ' · ' + exportNote;
 
       var includesLabel = document.createElement('p');
       includesLabel.className = 'plan-includes-label';

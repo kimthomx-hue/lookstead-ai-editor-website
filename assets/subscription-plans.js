@@ -8,42 +8,30 @@
   var MARKETING_PRICES = {
     pro: {
       introLabel: '£1 first month',
-      recurringLabel: '£8.99/month after',
+      recurringLabel: '£3.99/month after',
       introAmount: '£1',
-      recurringAmount: '£8.99',
+      recurringAmount: '£3.99',
     },
     creator: {
-      introLabel: '£4.99 first month',
-      recurringLabel: '£19.99/month after',
-      introAmount: '£4.99',
-      recurringAmount: '£19.99',
-    },
-    studio: {
-      introLabel: '£14.99 first month',
-      recurringLabel: '£54.99/month after',
-      introAmount: '£14.99',
-      recurringAmount: '£54.99',
+      introLabel: '£11.99/month',
+      recurringLabel: '£11.99/month',
+      introAmount: '£11.99',
+      recurringAmount: '£11.99',
     },
   };
 
   var MARKETING_ANNUAL_PRICES = {
     pro: {
-      yearlyAmount: '£89.99',
-      perMonthEquivalent: '£7.50',
-      savingsAmount: '£18',
-      savingsHint: 'Save £18 vs 12 monthly payments',
+      yearlyAmount: '£39.99',
+      perMonthEquivalent: '£3.33',
+      savingsAmount: '£7.89',
+      savingsHint: 'Save £7.89 vs 12 monthly payments',
     },
     creator: {
-      yearlyAmount: '£199.99',
-      perMonthEquivalent: '£16.67',
-      savingsAmount: '£40',
-      savingsHint: 'Save £40 vs 12 monthly payments',
-    },
-    studio: {
-      yearlyAmount: '£549.99',
-      perMonthEquivalent: '£45.83',
-      savingsAmount: '£110',
-      savingsHint: 'Save £110 vs 12 monthly payments',
+      yearlyAmount: '£119.99',
+      perMonthEquivalent: '£10.00',
+      savingsAmount: '£23.89',
+      savingsHint: 'Save £23.89 vs 12 monthly payments',
     },
   };
 
@@ -63,11 +51,6 @@
       subtitle: 'More projects, advanced AI clip tools and brand presets.',
       priceHint: MARKETING_PRICES.creator.introLabel,
     },
-    studio: {
-      title: 'Studio',
-      subtitle: 'Maximum AI allowance, batch clips and priority processing.',
-      priceHint: MARKETING_PRICES.studio.introLabel,
-    },
   };
 
   var PLAN_BENEFITS = {
@@ -84,6 +67,7 @@
         subtitle: FREE_MONTHLY_AI_CREDITS + ' AI actions per month.',
       },
       { title: 'Basic styles', subtitle: 'Core caption and edit presets.' },
+      { title: '1 external video import per day', subtitle: 'Import rights-cleared video files from direct download links.' },
     ],
     pro: [
       { title: 'No watermark', subtitle: 'Clean exports for social and clients.' },
@@ -91,6 +75,7 @@
       { title: 'AI captions', subtitle: 'Generated captions with premium animated styles.' },
       { title: 'Premium editing styles', subtitle: 'Animated captions and pro looks.' },
       { title: 'More AI credits', subtitle: 'Higher monthly allowance than Free.' },
+      { title: '10 external video imports per day', subtitle: 'Import rights-cleared video files from direct download links.' },
     ],
     creator: [
       { title: 'Everything in Pro', subtitle: 'All Pro AI and caption features.' },
@@ -98,17 +83,12 @@
       { title: 'Advanced AI clip selection', subtitle: 'Fine-tune which moments make the cut.' },
       { title: 'Custom brand presets', subtitle: 'Save fonts, colors and layouts.' },
       { title: 'Priority rendering', subtitle: 'Faster export queue when supported.' },
-    ],
-    studio: [
-      { title: 'Everything in Creator', subtitle: 'Full Creator toolkit included.' },
-      { title: 'Highest AI allowance', subtitle: 'Built for daily publishing teams.' },
-      { title: 'Batch short creation', subtitle: 'Generate multiple clips from one source.' },
-      { title: 'Advanced moment detection', subtitle: 'Deep AI scan for hooks and peaks.' },
-      { title: 'Premium templates', subtitle: 'Studio brand kits and batch publishing tools.' },
+      { title: 'Unlimited external video imports', subtitle: 'Import rights-cleared video files from direct download links.' },
     ],
   };
 
-  var MAX_ACTIVE_PROJECTS = { free: null, pro: 12, creator: 30, studio: 100 };
+  var MAX_ACTIVE_PROJECTS = { free: null, pro: 12, creator: 30 };
+  var MAX_DAILY_EXTERNAL_VIDEO_IMPORTS = { free: 1, pro: 10, creator: null };
 
   function activeProjectsLimitLabel(planId) {
     var limit = MAX_ACTIVE_PROJECTS[planId];
@@ -118,8 +98,15 @@
     return 'Up to ' + limit + ' active projects';
   }
 
+  function externalVideoImportsLimitLabel(planId) {
+    var limit = MAX_DAILY_EXTERNAL_VIDEO_IMPORTS[planId];
+    return limit == null
+      ? 'Unlimited external video imports'
+      : limit + ' external video import' + (limit === 1 ? '' : 's') + ' per day';
+  }
+
   window.LOOKSTEAD_PLANS = {
-    planOrder: ['free', 'pro', 'creator', 'studio'],
+    planOrder: ['free', 'pro', 'creator'],
     recommendedPaidPlan: 'pro',
     freeMonthlyAiCredits: FREE_MONTHLY_AI_CREDITS,
     marketingPrices: MARKETING_PRICES,
@@ -127,7 +114,9 @@
     planCopy: PLAN_COPY,
     planBenefits: PLAN_BENEFITS,
     maxActiveProjects: MAX_ACTIVE_PROJECTS,
+    maxDailyExternalVideoImports: MAX_DAILY_EXTERNAL_VIDEO_IMPORTS,
     exportQualityNote: '1080p, 2K and 4K exports included on Free (device permitting)',
     activeProjectsLimitLabel: activeProjectsLimitLabel,
+    externalVideoImportsLimitLabel: externalVideoImportsLimitLabel,
   };
 })();
