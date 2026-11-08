@@ -1260,6 +1260,9 @@ a {
 
 .hero-art {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: min(100%, 520px);
   justify-self: end;
@@ -1268,15 +1271,55 @@ a {
   background: none;
   box-shadow: none;
   transform: none;
+  isolation: isolate;
+}
+
+.hero-art::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 115%;
+  height: 88%;
+  translate: -50% -52%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 72% 58% at 48% 38%, rgba(218, 180, 254, 0.72), transparent 68%),
+    radial-gradient(ellipse 88% 72% at 52% 62%, rgba(124, 58, 237, 0.48), transparent 70%),
+    radial-gradient(ellipse 100% 85% at 50% 50%, rgba(168, 85, 247, 0.35), transparent 78%);
+  filter: blur(36px);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.hero-art::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 52%;
+  height: 68%;
+  translate: -50% -48%;
+  border-radius: 22%;
+  background: radial-gradient(ellipse at 50% 42%, rgba(245, 245, 247, 0.14), transparent 62%);
+  filter: blur(22px);
+  box-shadow:
+    0 0 80px rgba(192, 132, 252, 0.45),
+    0 0 140px rgba(124, 58, 237, 0.28);
+  pointer-events: none;
 }
 
 .hero-mockup {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: auto;
   max-height: min(72vh, 640px);
   object-fit: contain;
-  filter: drop-shadow(0 28px 80px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 48px rgba(168, 85, 247, 0.12));
+  filter: drop-shadow(0 32px 72px rgba(0, 0, 0, 0.5)) drop-shadow(0 12px 40px rgba(168, 85, 247, 0.22));
 }
 
 .hero-art-frame {
