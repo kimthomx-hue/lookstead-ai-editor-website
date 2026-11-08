@@ -154,25 +154,26 @@ a {
 }
 
 .hero-slides {
-  position: relative;
+  display: grid;
+  grid-template-areas: 'stack';
   max-width: 680px;
-  min-height: 200px;
 }
 
 .hero-slide {
-  position: absolute;
-  inset: 0;
+  grid-area: stack;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .hero-slide.is-active {
-  position: relative;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+  visibility: visible;
+  z-index: 1;
 }
 
 .hero h1,
@@ -1225,8 +1226,9 @@ a {
 }
 
 .hero-slides {
+  display: grid;
+  grid-template-areas: 'stack';
   max-width: 640px;
-  min-height: 225px;
 }
 
 .hero h1,
@@ -1259,14 +1261,22 @@ a {
 .hero-art {
   position: relative;
   width: 100%;
-  max-width: 560px;
+  max-width: min(100%, 520px);
   justify-self: end;
-  padding: 1.15rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 24px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025));
-  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.4), 0 0 64px rgba(168, 85, 247, 0.1);
-  transform: perspective(1200px) rotateY(-5deg) rotateX(2deg);
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.hero-mockup {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(72vh, 640px);
+  object-fit: contain;
+  filter: drop-shadow(0 28px 80px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 48px rgba(168, 85, 247, 0.12));
 }
 
 .hero-art-frame {
@@ -1892,14 +1902,13 @@ a {
     padding-bottom: 2.5rem;
   }
 
-  .hero-slides {
-    min-height: 205px;
-  }
-
   .hero-art {
     justify-self: center;
     width: min(100%, 540px);
-    transform: none;
+  }
+
+  .hero-mockup {
+    max-height: min(56vh, 520px);
   }
 
   .hero-proof-strip {
@@ -1926,22 +1935,13 @@ a {
     padding-left: 1.1rem;
   }
 
-  .hero-slides {
-    min-height: 235px;
-  }
-
   .hero h1,
   .hero .hero-headline {
     font-size: clamp(2.5rem, 12vw, 3.5rem);
   }
 
-  .hero-art {
-    padding: 0.65rem;
-    border-radius: 17px;
-  }
-
-  .hero-art-frame {
-    padding: 0.6rem;
+  .hero-mockup {
+    max-height: min(50vh, 440px);
   }
 
   .section {
